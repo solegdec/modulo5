@@ -5,19 +5,19 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 //heroku
-const port = process.env.PORT || 3030 
+const port = process.env.PORT || 3030
 
 
 var usersRouter = require('./routes/users');
 
 //rutas nuestras
-const productCartRouter= require("./routes/productCartRouter.js")
-const registerRouter =require("./routes/registerRouter.js")
-const loginRouter =require("./routes/loginRouter.js")
-const indexRouter =require("./routes/indexRouter.js")
-const productRouter =require("./routes/productRouter.js")
-const productDetailRouter =require("./routes/productDetailRouter.js")
-// fin rutas nuestras
+const productCartRouter = require("./routes/productCartRouter.js")
+const registerRouter = require("./routes/registerRouter.js")
+const loginRouter = require("./routes/loginRouter.js")
+const indexRouter = require("./routes/indexRouter.js")
+const productRouter = require("./routes/productRouter.js")
+const productDetailRouter = require("./routes/productDetailRouter.js")
+    // fin rutas nuestras
 
 
 var app = express();
@@ -30,40 +30,42 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('./public'));
 
 
+app.use("/styles", express.static(__dirname + "/styles"));
 app.use('/users', usersRouter);
 
 // app.use nuestros
 app.use('/', indexRouter)
-app.use ("/productCart", productCartRouter)
+app.use("/productCart", productCartRouter)
 app.use('/login', loginRouter)
 app.use('/register', registerRouter)
 app.use('/product', productRouter)
-app.use ("/productDetail", productDetailRouter)
-// cierre app.use nuestros
+app.use("/productDetail", productDetailRouter)
+    // cierre app.use nuestros
 
 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+    next(createError(404));
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 //agregamos listen nuestro
-app.listen (3030,()=> {
-  console.log ("ok")
-})
-// cierre listen nuestro
+app.listen(3030, () => {
+        console.log("ok")
+    })
+    // cierre listen nuestro
 module.exports = app;
