@@ -17,6 +17,7 @@ const loginRouter = require("./routes/loginRouter.js")
 const indexRouter = require("./routes/indexRouter.js")
 const productRouter = require("./routes/productRouter.js")
 const productDetailRouter = require("./routes/productDetailRouter.js")
+const adminRouter = require("./routes/adminRouter.js")
     // fin rutas nuestras
 
 
@@ -44,6 +45,7 @@ app.use('/login', loginRouter)
 app.use('/register', registerRouter)
 app.use('/product', productRouter)
 app.use("/productDetail", productDetailRouter)
+app.use("/admin",adminRouter)
     // cierre app.use nuestros
 
 
