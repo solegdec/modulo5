@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button.volverAdmin{
+        margin-left: 200px;
+
+    
+}
+#card {
+    margin: 3em auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    text-align: center;
+}
+
+textarea {
+    width: 50%;
+    height: 50px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+.campos_cat {
+    width: 50%;
+    height: 20px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+.campos_add {
+    width: 50%;
+    height: 20px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+.notview {
+    display: none
+}
+
+.block {
+    display: block
+}
+
+.button2 {
+    width: 100px;
+    height: 50%;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 300;
+    color: rgb(2, 16, 61);
+    border-color: rgb(95, 99, 99);
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+}
+.button_add{
+    width: 150px;
+    height: 30%;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 300;
+    color: rgb(1, 13, 48);
+    border-color: rgb(95, 99, 99);
+    background-color: #E9B843;
+    padding: 15px 10px 20px 10px;
+    margin:15px 10px 15px 10px;
+}
